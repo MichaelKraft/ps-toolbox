@@ -1,3 +1,8 @@
+Import-Module ActiveDirectory
+if ( (Get-PSSnapin -Name Microsoft.Exchange.Management.PowerShell.E2010 -ErrorAction SilentlyContinue) -eq $null ) {
+	add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010
+}
+
 $identity = $args[0]
 
 if(((Get-DistributionGroup -Identity $identity -ErrorAction 'SilentlyContinue').IsValid) -eq $true) {

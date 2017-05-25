@@ -1,5 +1,9 @@
-$identity = $args[0]
+Import-Module ActiveDirectory
+if ( (Get-PSSnapin -Name Microsoft.Exchange.Management.PowerShell.E2010 -ErrorAction SilentlyContinue) -eq $null ) {
+	add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010
+}
 
+$identity = $args[0]
 write-host @"
 
 Account email addressses

@@ -1,3 +1,8 @@
+Import-Module ActiveDirectory
+if ( (Get-PSSnapin -Name Microsoft.Exchange.Management.PowerShell.E2010 -ErrorAction SilentlyContinue) -eq $null ) {
+	add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010
+}
+
 $search = $args[0]
 $found = 0
 
