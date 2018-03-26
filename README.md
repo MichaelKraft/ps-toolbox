@@ -50,6 +50,12 @@ Membership:
     john.doe@org.net
 ```
 
+### Search for Email Address
+
+**Usage:** `\search_for_email.ps1 searchstring`
+
+Searches exchange for email addresses containing the supplied string, then invokes `locate_email.ps1` using the results. 
+
 ### Locate Email Address
 
 **Usage:** `.\locate_email.ps1 someemail@org.net`
